@@ -129,7 +129,7 @@ namespace SS_OpenCV
                 }
             }
         }
-        public static void Red(Image<Bgr, byte> img)
+        public static void RedChannel(Image<Bgr, byte> img)
         {
             unsafe
             {
@@ -176,12 +176,10 @@ namespace SS_OpenCV
             unsafe
             {
                 // direct access to the image memory(sequencial)
-                // direcion top left -> bottom right
-                Bgr aux;
+                // direcion top left -> bottom 
                 MIplImage m = img.MIplImage;
                 byte* dataPtr = (byte*)m.ImageData.ToPointer(); // Pointer to the image
                 byte blue, green, red;
-
                 int width = img.Width;
                 int height = img.Height;
                 int nChan = m.NChannels; // number of channels - 3
@@ -192,20 +190,21 @@ namespace SS_OpenCV
                     for (y = 0; y < height; y++)
                     {
                         for (x = 0; x < width; x++)
-                        {
-                            aux = img[y, x];
-                            img[y, x] = new Bgr(contrast * aux.Blue + bright, contrast * aux.Green + bright, contrast * aux.Red + bright);
-
-                            //dataPtr[0] = (byte)(contrast * blue + bright);
-                            //dataPtr[1] = (byte)(contrast * green + bright);
-                            //dataPtr[2] = (byte )(contrast * red + bright);
+                        { 
+                            blue = dataPtr[0];
+                            green = dataPtr[1];
+                            red = dataPtr[2];
+                    
+                            dataPtr[0] = (byte)(contrast * blue + bright);
+                            dataPtr[1] = (byte)(contrast * green + bright);
+                            dataPtr[2] = (byte)(contrast * red + bright);
 
                             // advance the pointer to the next pixel
-                            //dataPtr += nChan;
+                            dataPtr += nChan;
                         }
 
                         //at the end of the line advance the pointer by the aligment bytes (padding)
-                        //dataPtr += padding;
+                        dataPtr += padding;
                     }
                 }
             }

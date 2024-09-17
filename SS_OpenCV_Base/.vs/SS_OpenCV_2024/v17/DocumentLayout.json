@@ -1,22 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Sistemas Sensoriais\\SS_OpenCV_Base\\",
+  "WorkspaceRootPath": "C:\\SS\\SS_OpenCV_Base\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CD855189-4EC3-4D94-8305-CE02B0E98ED1}|SS_OpenCV\\SS_OpenCV.csproj|C:\\Sistemas Sensoriais\\SS_OpenCV_Base\\ss_opencv\\imageclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD855189-4EC3-4D94-8305-CE02B0E98ED1}|SS_OpenCV\\SS_OpenCV.csproj|solutionrelative:ss_opencv\\imageclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CD855189-4EC3-4D94-8305-CE02B0E98ED1}|SS_OpenCV\\SS_OpenCV.csproj|C:\\SS\\SS_OpenCV_Base\\ss_opencv\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD855189-4EC3-4D94-8305-CE02B0E98ED1}|SS_OpenCV\\SS_OpenCV.csproj|solutionrelative:ss_opencv\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CD855189-4EC3-4D94-8305-CE02B0E98ED1}|SS_OpenCV\\SS_OpenCV.csproj|C:\\Sistemas Sensoriais\\SS_OpenCV_Base\\ss_opencv\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{CD855189-4EC3-4D94-8305-CE02B0E98ED1}|SS_OpenCV\\SS_OpenCV.csproj|C:\\SS\\SS_OpenCV_Base\\ss_opencv\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{CD855189-4EC3-4D94-8305-CE02B0E98ED1}|SS_OpenCV\\SS_OpenCV.csproj|solutionrelative:ss_opencv\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CD855189-4EC3-4D94-8305-CE02B0E98ED1}|SS_OpenCV\\SS_OpenCV.csproj|C:\\Sistemas Sensoriais\\SS_OpenCV_Base\\ss_opencv\\inputbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{CD855189-4EC3-4D94-8305-CE02B0E98ED1}|SS_OpenCV\\SS_OpenCV.csproj|C:\\SS\\SS_OpenCV_Base\\ss_opencv\\inputbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{CD855189-4EC3-4D94-8305-CE02B0E98ED1}|SS_OpenCV\\SS_OpenCV.csproj|solutionrelative:ss_opencv\\inputbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CD855189-4EC3-4D94-8305-CE02B0E98ED1}|SS_OpenCV\\SS_OpenCV.csproj|c:\\sistemas sensoriais\\ss_opencv_base\\ss_opencv\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD855189-4EC3-4D94-8305-CE02B0E98ED1}|SS_OpenCV\\SS_OpenCV.csproj|solutionrelative:ss_opencv\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CD855189-4EC3-4D94-8305-CE02B0E98ED1}|SS_OpenCV\\SS_OpenCV.csproj|c:\\ss\\ss_opencv_base\\ss_opencv\\imageclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD855189-4EC3-4D94-8305-CE02B0E98ED1}|SS_OpenCV\\SS_OpenCV.csproj|solutionrelative:ss_opencv\\imageclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,17 +26,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "ImageClass.cs",
-              "DocumentMoniker": "C:\\Sistemas Sensoriais\\SS_OpenCV_Base\\SS_OpenCV\\ImageClass.cs",
+              "DocumentMoniker": "C:\\SS\\SS_OpenCV_Base\\SS_OpenCV\\ImageClass.cs",
               "RelativeDocumentMoniker": "SS_OpenCV\\ImageClass.cs",
-              "ToolTip": "C:\\Sistemas Sensoriais\\SS_OpenCV_Base\\SS_OpenCV\\ImageClass.cs",
+              "ToolTip": "C:\\SS\\SS_OpenCV_Base\\SS_OpenCV\\ImageClass.cs",
               "RelativeToolTip": "SS_OpenCV\\ImageClass.cs",
-              "ViewState": "AgIAALsAAAAAAAAAAAAIwM8AAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAKQAAAAAAAAAAAAIwMoAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-17T13:56:42.01Z",
               "IsPinned": true,
@@ -44,11 +44,24 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\SS\\SS_OpenCV_Base\\SS_OpenCV\\MainForm.cs",
+              "RelativeDocumentMoniker": "SS_OpenCV\\MainForm.cs",
+              "ToolTip": "C:\\SS\\SS_OpenCV_Base\\SS_OpenCV\\MainForm.cs",
+              "RelativeToolTip": "SS_OpenCV\\MainForm.cs",
+              "ViewState": "AgIAAJcAAAAAAAAAAAAEwN0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-17T14:51:58.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MainForm.cs [Design]",
-              "DocumentMoniker": "C:\\Sistemas Sensoriais\\SS_OpenCV_Base\\SS_OpenCV\\MainForm.cs",
+              "DocumentMoniker": "C:\\SS\\SS_OpenCV_Base\\SS_OpenCV\\MainForm.cs",
               "RelativeDocumentMoniker": "SS_OpenCV\\MainForm.cs",
-              "ToolTip": "C:\\Sistemas Sensoriais\\SS_OpenCV_Base\\SS_OpenCV\\MainForm.cs [Design]",
+              "ToolTip": "C:\\SS\\SS_OpenCV_Base\\SS_OpenCV\\MainForm.cs [Design]",
               "RelativeToolTip": "SS_OpenCV\\MainForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-17T16:09:03.233Z",
@@ -58,26 +71,13 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "InputBox.cs [Design]",
-              "DocumentMoniker": "C:\\Sistemas Sensoriais\\SS_OpenCV_Base\\SS_OpenCV\\InputBox.cs",
+              "DocumentMoniker": "C:\\SS\\SS_OpenCV_Base\\SS_OpenCV\\InputBox.cs",
               "RelativeDocumentMoniker": "SS_OpenCV\\InputBox.cs",
-              "ToolTip": "C:\\Sistemas Sensoriais\\SS_OpenCV_Base\\SS_OpenCV\\InputBox.cs [Design]",
+              "ToolTip": "C:\\SS\\SS_OpenCV_Base\\SS_OpenCV\\InputBox.cs [Design]",
               "RelativeToolTip": "SS_OpenCV\\InputBox.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-17T15:38:54.34Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainForm.cs",
-              "DocumentMoniker": "C:\\Sistemas Sensoriais\\SS_OpenCV_Base\\SS_OpenCV\\MainForm.cs",
-              "RelativeDocumentMoniker": "SS_OpenCV\\MainForm.cs",
-              "ToolTip": "C:\\Sistemas Sensoriais\\SS_OpenCV_Base\\SS_OpenCV\\MainForm.cs",
-              "RelativeToolTip": "SS_OpenCV\\MainForm.cs",
-              "ViewState": "AgIAANAAAAAAAAAAAAD4v+QAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-17T14:51:58.765Z",
-              "EditorCaption": ""
             }
           ]
         }

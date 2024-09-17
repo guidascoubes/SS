@@ -197,7 +197,7 @@ namespace SS_OpenCV
             //copy Undo Image
             imgUndo = img.Copy();
 
-            ImageClass.Red(img);
+            ImageClass.RedChannel(img);
 
             ImageViewer.Image = img;
             ImageViewer.Refresh(); // refresh image on the screen
@@ -217,7 +217,8 @@ namespace SS_OpenCV
 
             InputBox ConstBox = new InputBox("constraste");
             ConstBox.ShowDialog();
-            int contraste = Convert.ToInt32(ConstBox.ValueTextBox.Text);
+
+            double contraste = Convert.ToSingle(ConstBox.ValueTextBox.Text);
 
             Cursor = Cursors.WaitCursor; // clock cursor 
 
