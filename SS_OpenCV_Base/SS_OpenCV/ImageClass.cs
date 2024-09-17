@@ -180,6 +180,7 @@ namespace SS_OpenCV
                 MIplImage m = img.MIplImage;
                 byte* dataPtr = (byte*)m.ImageData.ToPointer(); // Pointer to the image
                 byte blue, green, red;
+                double b, g, r;
                 int width = img.Width;
                 int height = img.Height;
                 int nChan = m.NChannels; // number of channels - 3
@@ -191,13 +192,36 @@ namespace SS_OpenCV
                     {
                         for (x = 0; x < width; x++)
                         { 
-                            blue = dataPtr[0];
-                            green = dataPtr[1];
-                            red = dataPtr[2];
-                    
-                            dataPtr[0] = (byte)(contrast * blue + bright);
-                            dataPtr[1] = (byte)(contrast * green + bright);
-                            dataPtr[2] = (byte)(contrast * red + bright);
+                            b= Math.Round(contrast * dataPtr[0] + bright);
+                            g = Math.Round(contrast * dataPtr[1] + bright);
+                            r = Math.Round(contrast * dataPtr[2] + bright);
+                            blue = (byte)Math.Round(contrast * dataPtr[0] + bright);
+                            green = (byte)Math.Round(contrast * dataPtr[1] + bright);
+                            red = (byte)Math.Round(contrast * dataPtr[2] + bright);
+
+                            dataPtr[0] = blue;
+                            dataPtr[1] = green;
+                            dataPtr[2] = red;
+
+                            if (b <= 0){
+                                dataPtr[0] = 0;
+                            } else if (b >= 255)
+                                {
+                                    dataPtr[0] = 255;
+                                }
+
+                            if (g <= 0){
+                                dataPtr[1] = 0;
+                            } else if (g >= 255)
+                                {
+                                    dataPtr[1] = 255;
+                                }
+                            if (r <= 0){
+                                dataPtr[2] = 0;
+                            }else if (r >= 255)
+                                {
+                                    dataPtr[2] = 255;
+                                }
 
                             // advance the pointer to the next pixel
                             dataPtr += nChan;
