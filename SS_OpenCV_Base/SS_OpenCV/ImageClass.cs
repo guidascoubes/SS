@@ -10,6 +10,7 @@ using Emgu.CV.ImgHash;
 using System.Linq;
 using Emgu.CV.XFeatures2D;
 using System.Diagnostics.Eventing.Reader;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace SS_OpenCV
 {
@@ -233,5 +234,226 @@ namespace SS_OpenCV
                 }
             }
         }
+        public static void Rotation(Image<Bgr, byte> imgDestino, Image<Bgr, byte> imgOrigem, float angle)
+        {
+            unsafe
+            {
+                MIplImage m_destino = imgDestino.MIplImage;
+                MIplImage m_origem = imgOrigem.MIplImage;
+                byte* dataPtr_origem = (byte*)m_origem.ImageData.ToPointer();
+                byte* dataPtr_destino = (byte*)m_destino.ImageData.ToPointer();// Pointer to the image
+
+                byte blue, green, red;
+                int widthD = imgDestino.Width;
+                int widthO = m_origem.Width;
+                int heightO = imgOrigem.Height;
+                int heightD = imgDestino.Height;
+                int x_origem, y_origem;
+                int widthstep = m_origem.WidthStep;
+                int nChan = m_destino.NChannels; // number of channels - 3
+                int padding = m_destino.WidthStep - m_destino.NChannels * m_destino.Width; // alinhament bytes (padding)
+                int x_destino, y_destino;
+
+                if (nChan == 3)
+                {
+                    for (y_destino = 0; y_destino < heightD; y_destino++)
+                    {
+                        for (x_destino = 0; x_destino < widthD; x_destino++)
+                        {
+                            x_origem = (int)Math.Round((x_destino - widthD/2.0)*Math.Cos(angle)-(heightD/ 2.0-y_destino)*Math.Sin(angle)+widthD /2.0);
+                            y_origem = (int)Math.Round(heightD / 2.0 - (x_destino - widthD / 2.0) * Math.Sin(angle) - (heightD/ 2.0 - y_destino)*Math.Cos(angle));
+
+
+
+                            if (x_origem < 0 || x_origem >= widthO || y_origem < 0 || y_origem >= heightO)
+                            {
+                                blue = 0;
+                                green = 0;
+                                red = 0;
+                            }
+                            else
+                            {
+                                blue = (byte)(dataPtr_origem + (y_origem * widthstep) + x_origem * nChan)[0];
+                                green = (byte)(dataPtr_origem + (y_origem * widthstep) + x_origem * nChan)[1];
+                                red = (byte)(dataPtr_origem + (y_origem * widthstep) + x_origem * nChan)[2];
+                            }
+                            dataPtr_destino[0] = blue; 
+                            dataPtr_destino[1] = green;
+                            dataPtr_destino[2] = red;
+
+
+                            dataPtr_destino += nChan;
+                        }
+                        dataPtr_destino += padding;
+                    }
+                }
+            }
+        }
+        public static void Translation(Image<Bgr, byte> imgDestino, Image<Bgr, byte> imgOrigem, int dx, int dy)
+        {
+            unsafe
+            {
+                MIplImage m_destino = imgDestino.MIplImage;
+                MIplImage m_origem = imgOrigem.MIplImage;
+                byte* dataPtr_origem = (byte*)m_origem.ImageData.ToPointer();
+                byte* dataPtr_destino = (byte*)m_destino.ImageData.ToPointer();// Pointer to the image
+
+                byte blue, green, red;
+                int widthD = imgDestino.Width;
+                int widthO = m_origem.Width;
+                int heightO = imgOrigem.Height;
+                int heightD = imgDestino.Height;
+                int x_origem, y_origem;
+                int widthstep = m_origem.WidthStep;
+                int nChan = m_destino.NChannels; // number of channels - 3
+                int padding = m_destino.WidthStep - m_destino.NChannels * m_destino.Width; // alinhament bytes (padding)
+                int x_destino, y_destino;
+
+                if (nChan == 3)
+                {
+                    for (y_destino = 0; y_destino < heightD; y_destino++)
+                    {
+                        for (x_destino = 0; x_destino < widthD; x_destino++)
+                        {
+                            x_origem = (x_destino-dx);
+                            y_origem = (y_destino-dy);
+
+
+
+                            if (x_origem < 0 || x_origem >= widthO || y_origem < 0 || y_origem >= heightO)
+                            {
+                                blue = 0;
+                                green = 0;
+                                red = 0;
+                            }
+                            else
+                            {
+                                blue = (byte)(dataPtr_origem + (y_origem * widthstep) + x_origem * nChan)[0];
+                                green = (byte)(dataPtr_origem + (y_origem * widthstep) + x_origem * nChan)[1];
+                                red = (byte)(dataPtr_origem + (y_origem * widthstep) + x_origem * nChan)[2];
+                            }
+                            dataPtr_destino[0] = blue;
+                            dataPtr_destino[1] = green;
+                            dataPtr_destino[2] = red;
+
+
+                            dataPtr_destino += nChan;
+                        }
+                        dataPtr_destino += padding;
+                    }
+                }
+            }
+        }
+        public static void Scale(Image<Bgr, byte> imgDestino, Image<Bgr, byte> imgOrigem, float scaleFactor)
+        {
+            unsafe
+            {
+                MIplImage m_destino = imgDestino.MIplImage;
+                MIplImage m_origem = imgOrigem.MIplImage;
+                byte* dataPtr_origem = (byte*)m_origem.ImageData.ToPointer();
+                byte* dataPtr_destino = (byte*)m_destino.ImageData.ToPointer();// Pointer to the image
+
+                byte blue, green, red;
+                int widthD = imgDestino.Width;
+                int widthO = m_origem.Width;
+                int heightO = imgOrigem.Height;
+                int heightD = imgDestino.Height;
+                int x_origem, y_origem;
+                int widthstep = m_origem.WidthStep;
+                int nChan = m_destino.NChannels; // number of channels - 3
+                int padding = m_destino.WidthStep - m_destino.NChannels * m_destino.Width; // alinhament bytes (padding)
+                int x_destino, y_destino;
+
+                if (nChan == 3)
+                {
+                    for (y_destino = 0; y_destino < heightD; y_destino++)
+                    {
+                        for (x_destino = 0; x_destino < widthD; x_destino++)
+                        {
+                            x_origem = (int)Math.Round(x_destino / scaleFactor);
+                            y_origem = (int)Math.Round(y_destino / scaleFactor);
+
+
+
+                            if (x_origem < 0 || x_origem >= widthO || y_origem < 0 || y_origem >= heightO)
+                            {
+                                blue = 0;
+                                green = 0;
+                                red = 0;
+                            }
+                            else
+                            {
+                                blue = (byte)(dataPtr_origem + (y_origem * widthstep) + x_origem * nChan)[0];
+                                green = (byte)(dataPtr_origem + (y_origem * widthstep) + x_origem * nChan)[1];
+                                red = (byte)(dataPtr_origem + (y_origem * widthstep) + x_origem * nChan)[2];
+                            }
+                            dataPtr_destino[0] = blue;
+                            dataPtr_destino[1] = green;
+                            dataPtr_destino[2] = red;
+
+
+                            dataPtr_destino += nChan;
+                        }
+                        dataPtr_destino += padding;
+                    }
+                }
+            }
+        }
+        public static void Scale_point_xy(Image<Bgr, byte> imgDestino, Image<Bgr, byte> imgOrigem, float scaleFactor, int centerX, int centerY)
+        {
+            unsafe
+            {
+                MIplImage m_destino = imgDestino.MIplImage;
+                MIplImage m_origem = imgOrigem.MIplImage;
+                byte* dataPtr_origem = (byte*)m_origem.ImageData.ToPointer();
+                byte* dataPtr_destino = (byte*)m_destino.ImageData.ToPointer();// Pointer to the image
+
+                byte blue, green, red;
+                int widthD = imgDestino.Width;
+                int widthO = m_origem.Width;
+                int heightO = imgOrigem.Height;
+                int heightD = imgDestino.Height;
+                int x_origem, y_origem;
+                int widthstep = m_origem.WidthStep;
+                int nChan = m_destino.NChannels; // number of channels - 3
+                int padding = m_destino.WidthStep - m_destino.NChannels * m_destino.Width; // alinhament bytes (padding)
+                int x_destino, y_destino;
+
+                if (nChan == 3)
+                {
+                    for (y_destino = 0; y_destino < heightD; y_destino++)
+                    {
+                        for (x_destino = 0; x_destino < widthD; x_destino++)
+                        {
+                            x_origem = (int)Math.Round((x_destino - centerX) / scaleFactor + centerX);
+                            y_origem = (int)Math.Round(-((y_destino - centerY) / scaleFactor) + centerY);
+
+
+
+                            if (x_origem < 0 || x_origem >= widthO || y_origem < 0 || y_origem >= heightO)
+                            {
+                                blue = 0;
+                                green = 0;
+                                red = 0;
+                            }
+                            else
+                            {
+                                blue = (byte)(dataPtr_origem + (y_origem * widthstep) + x_origem * nChan)[0];
+                                green = (byte)(dataPtr_origem + (y_origem * widthstep) + x_origem * nChan)[1];
+                                red = (byte)(dataPtr_origem + (y_origem * widthstep) + x_origem * nChan)[2];
+                            }
+                            dataPtr_destino[0] = blue;
+                            dataPtr_destino[1] = green;
+                            dataPtr_destino[2] = red;
+
+
+                            dataPtr_destino += nChan;
+                        }
+                        dataPtr_destino += padding;
+                    }
+                }
+            }
+        }
     }
+    
 }

@@ -232,6 +232,73 @@ namespace SS_OpenCV
 
             Cursor = Cursors.Default; // normal cursor 
         }
+
+        private void rotationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (img == null) // verify if the image is already opened
+                return;
+            InputBox angleBox = new InputBox("anglo");
+            angleBox.ShowDialog();
+            float angle = (float)Convert.ToDouble(angleBox.ValueTextBox.Text);
+
+            Cursor = Cursors.WaitCursor; // clock cursor 
+
+            //copy Undo Image
+            imgUndo = img.Copy();
+
+            ImageClass.Rotation(img, img.Copy(), angle);
+
+            ImageViewer.Image = img;
+            ImageViewer.Refresh(); // refresh image on the screen
+
+            Cursor = Cursors.Default; // normal cursor 
+        }
+
+        private void translationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (img == null) // verify if the image is already opened
+                return;
+            InputBox dxBox = new InputBox("distancia em x");
+            dxBox.ShowDialog();
+            int dx = Convert.ToInt32(dxBox.ValueTextBox.Text);
+
+            InputBox dyBox = new InputBox("distancia em y");
+            dyBox.ShowDialog();
+            int dy = Convert.ToInt32(dyBox.ValueTextBox.Text);
+
+            Cursor = Cursors.WaitCursor; // clock cursor 
+
+            //copy Undo Image
+            imgUndo = img.Copy();
+
+            ImageClass.Translation(img, img.Copy(), dx, dy);
+
+            ImageViewer.Image = img;
+            ImageViewer.Refresh(); // refresh image on the screen
+
+            Cursor = Cursors.Default; // normal cursor 
+        }
+
+        private void zoomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (img == null) // verify if the image is already opened
+                return;
+            InputBox scaleBox = new InputBox("scaleFactor");
+            scaleBox.ShowDialog();
+            float scaleFactor = (float)Convert.ToDouble(scaleBox.ValueTextBox.Text);
+
+            Cursor = Cursors.WaitCursor; // clock cursor 
+
+            //copy Undo Image
+            imgUndo = img.Copy();
+
+            ImageClass.Scale(img, img.Copy(), scaleFactor);
+
+            ImageViewer.Image = img;
+            ImageViewer.Refresh(); // refresh image on the screen
+
+            Cursor = Cursors.Default; // normal cursor 
+        }
     }
 }
 

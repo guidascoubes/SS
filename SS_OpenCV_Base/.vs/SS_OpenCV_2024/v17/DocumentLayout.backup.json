@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\SS\\SS_OpenCV_Base\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CD855189-4EC3-4D94-8305-CE02B0E98ED1}|SS_OpenCV\\SS_OpenCV.csproj|C:\\SS\\SS_OpenCV_Base\\ss_opencv\\imageclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CD855189-4EC3-4D94-8305-CE02B0E98ED1}|SS_OpenCV\\SS_OpenCV.csproj|c:\\ss\\ss_opencv_base\\ss_opencv\\imageclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CD855189-4EC3-4D94-8305-CE02B0E98ED1}|SS_OpenCV\\SS_OpenCV.csproj|solutionrelative:ss_opencv\\imageclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CD855189-4EC3-4D94-8305-CE02B0E98ED1}|SS_OpenCV\\SS_OpenCV.csproj|c:\\ss\\ss_opencv_base\\ss_opencv\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CD855189-4EC3-4D94-8305-CE02B0E98ED1}|SS_OpenCV\\SS_OpenCV.csproj|C:\\SS\\SS_OpenCV_Base\\ss_opencv\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CD855189-4EC3-4D94-8305-CE02B0E98ED1}|SS_OpenCV\\SS_OpenCV.csproj|solutionrelative:ss_opencv\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -34,9 +34,9 @@
               "Title": "ImageClass.cs",
               "DocumentMoniker": "C:\\SS\\SS_OpenCV_Base\\SS_OpenCV\\ImageClass.cs",
               "RelativeDocumentMoniker": "SS_OpenCV\\ImageClass.cs",
-              "ToolTip": "C:\\SS\\SS_OpenCV_Base\\SS_OpenCV\\ImageClass.cs",
-              "RelativeToolTip": "SS_OpenCV\\ImageClass.cs",
-              "ViewState": "AgIAAL8AAAAAAAAAAAAAANwAAAAnAAAAAAAAAA==",
+              "ToolTip": "C:\\SS\\SS_OpenCV_Base\\SS_OpenCV\\ImageClass.cs*",
+              "RelativeToolTip": "SS_OpenCV\\ImageClass.cs*",
+              "ViewState": "AgIAAJoBAAAAAAAAAAAAAKwBAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-17T13:56:42.01Z",
               "IsPinned": true,
@@ -50,7 +50,7 @@
               "RelativeDocumentMoniker": "SS_OpenCV\\MainForm.cs",
               "ToolTip": "C:\\SS\\SS_OpenCV_Base\\SS_OpenCV\\MainForm.cs",
               "RelativeToolTip": "SS_OpenCV\\MainForm.cs",
-              "ViewState": "AgIAAMcAAAAAAAAAAAAtwNcAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAABMBAAAAAAAAAAAWwCwBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-17T14:51:58.765Z",
               "EditorCaption": ""
@@ -76,7 +76,8 @@
               "ToolTip": "C:\\SS\\SS_OpenCV_Base\\SS_OpenCV\\InputBox.cs [Design]",
               "RelativeToolTip": "SS_OpenCV\\InputBox.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-17T15:38:54.34Z"
+              "WhenOpened": "2024-09-17T15:38:54.34Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
