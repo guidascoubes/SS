@@ -410,7 +410,7 @@ namespace SS_OpenCV
 
                 byte blue, green, red;
                 int widthD = imgDestino.Width;
-                int widthO = m_origem.Width;
+                int widthO = imgOrigem.Width;
                 int heightO = imgOrigem.Height;
                 int heightD = imgDestino.Height;
                 int x_origem, y_origem;
@@ -425,7 +425,7 @@ namespace SS_OpenCV
                     {
                         for (x_destino = 0; x_destino < widthD; x_destino++)
                         {
-                            x_origem = (int)Math.Round((x_destino / scaleFactor) - ((widthO/2)/scaleFactor) + centerX);
+                            x_origem = (int)Math.Round((x_destino / scaleFactor) - ((widthO /2)/scaleFactor) + centerX);
                             y_origem = (int)Math.Round((y_destino / scaleFactor) - ((heightO / 2)/ scaleFactor) + centerY);
 
 
@@ -452,6 +452,54 @@ namespace SS_OpenCV
                     }
                 }
             }
+        }
+        public static void Mean(Image<Bgr, byte> imgDestino, Image<Bgr, byte> imgOrigem)
+        {
+            unsafe
+            {
+                MIplImage m_destino = imgDestino.MIplImage;
+                MIplImage m_origem = imgOrigem.MIplImage;
+                byte* dataPtr_origem = (byte*)m_origem.ImageData.ToPointer();
+                byte* dataPtr_destino = (byte*)m_destino.ImageData.ToPointer();// Pointer to the image
+
+                int heightD = imgDestino.Height;
+                int widthD = imgDestino.Width;
+                int sumB, sumG , sumR ;
+                int widthstep = m_origem.WidthStep;
+                int nChan = m_destino.NChannels;
+                int padding = m_destino.WidthStep - m_destino.NChannels * m_destino.Width; // alinhament bytes (padding)
+
+                dataPtr_destino += m_destino.WidthStep+ nChan;
+                dataPtr_origem += m_origem.WidthStep + nChan;
+
+                for (int ydestino = 1; ydestino < heightD - 1; ydestino++)
+                {
+                    for (int xdestino = 1; xdestino < widthD - 1; xdestino++)
+                    {
+                        sumR = 0;
+                        sumG = 0;
+                        sumB = 0;
+
+                        for (int k = -1; k <= 1; k++)
+                        {
+                            for (int w = -1; w <= 1; w++)
+                            {
+                                sumB += (dataPtr_origem + ((k) * widthstep) + ((w) * nChan))[0];
+                                sumG += (dataPtr_origem + ((k) * widthstep) + ((w) * nChan))[1];
+                                sumR += (dataPtr_origem + ((k) * widthstep) + ((w) * nChan))[2];
+                            }
+                        }
+                        dataPtr_destino[0] = (byte)Math.Round(sumB / 9.0);
+                        dataPtr_destino[1] = (byte)Math.Round(sumG / 9.0);
+                        dataPtr_destino[2] = (byte)Math.Round(sumR / 9.0);
+
+                        dataPtr_destino += nChan;
+                        dataPtr_origem += nChan;
+                    }
+                    dataPtr_destino += padding + (2 * nChan);
+                    dataPtr_origem += padding + (2 * nChan);
+                }
+            }        
         }
     }
     
