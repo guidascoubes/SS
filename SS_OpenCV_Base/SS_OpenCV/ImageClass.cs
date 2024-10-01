@@ -425,9 +425,8 @@ namespace SS_OpenCV
                     {
                         for (x_destino = 0; x_destino < widthD; x_destino++)
                         {
-                            x_origem = (int)Math.Round((x_destino - centerX) / scaleFactor + centerX);
-                            y_origem = (int)Math.Round(-((y_destino - centerY) / scaleFactor) + centerY);
-
+                            x_origem = (int)Math.Round((x_destino / scaleFactor) - ((widthO/2)/scaleFactor) + centerX);
+                            y_origem = (int)Math.Round((y_destino / scaleFactor) - ((heightO / 2)/ scaleFactor) + centerY);
 
 
                             if (x_origem < 0 || x_origem >= widthO || y_origem < 0 || y_origem >= heightO)

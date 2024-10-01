@@ -302,3 +302,21 @@ C:\SS\SS_OpenCV_Base\SS_OpenCV\obj\Debug\SS_OpenCV.csproj.CoreCompileInputs.cach
 C:\SS\SS_OpenCV_Base\SS_OpenCV\obj\Debug\SS_OpenCV.csproj.Up2Date
 C:\SS\SS_OpenCV_Base\SS_OpenCV\obj\Debug\SS_OpenCV.exe
 C:\SS\SS_OpenCV_Base\SS_OpenCV\obj\Debug\SS_OpenCV.pdb
+C:\Sistemas Sensoriais\SS\SS_OpenCV_Base\SS_OpenCV\bin\Debug\SS_OpenCV.exe.config
+C:\Sistemas Sensoriais\SS\SS_OpenCV_Base\SS_OpenCV\bin\Debug\SS_OpenCV.exe
+C:\Sistemas Sensoriais\SS\SS_OpenCV_Base\SS_OpenCV\bin\Debug\SS_OpenCV.pdb
+C:\Sistemas Sensoriais\SS\SS_OpenCV_Base\SS_OpenCV\bin\Debug\ZedGraph.dll
+C:\Sistemas Sensoriais\SS\SS_OpenCV_Base\SS_OpenCV\bin\Debug\Emgu.CV.UI.xml
+C:\Sistemas Sensoriais\SS\SS_OpenCV_Base\SS_OpenCV\bin\Debug\Emgu.CV.World.xml
+C:\Sistemas Sensoriais\SS\SS_OpenCV_Base\SS_OpenCV\bin\Debug\Forms.pdb
+C:\Sistemas Sensoriais\SS\SS_OpenCV_Base\SS_OpenCV\bin\Debug\SS_Eval.pdb
+C:\Sistemas Sensoriais\SS\SS_OpenCV_Base\SS_OpenCV\obj\Debug\SS_OpenCV.csproj.AssemblyReference.cache
+C:\Sistemas Sensoriais\SS\SS_OpenCV_Base\SS_OpenCV\obj\Debug\SS_OpenCV.AuthorsForm.resources
+C:\Sistemas Sensoriais\SS\SS_OpenCV_Base\SS_OpenCV\obj\Debug\SS_OpenCV.InputBox.resources
+C:\Sistemas Sensoriais\SS\SS_OpenCV_Base\SS_OpenCV\obj\Debug\SS_OpenCV.MainForm.resources
+C:\Sistemas Sensoriais\SS\SS_OpenCV_Base\SS_OpenCV\obj\Debug\SS_OpenCV.Properties.Resources.resources
+C:\Sistemas Sensoriais\SS\SS_OpenCV_Base\SS_OpenCV\obj\Debug\SS_OpenCV.csproj.GenerateResource.cache
+C:\Sistemas Sensoriais\SS\SS_OpenCV_Base\SS_OpenCV\obj\Debug\SS_OpenCV.csproj.CoreCompileInputs.cache
+C:\Sistemas Sensoriais\SS\SS_OpenCV_Base\SS_OpenCV\obj\Debug\SS_OpenCV.csproj.Up2Date
+C:\Sistemas Sensoriais\SS\SS_OpenCV_Base\SS_OpenCV\obj\Debug\SS_OpenCV.exe
+C:\Sistemas Sensoriais\SS\SS_OpenCV_Base\SS_OpenCV\obj\Debug\SS_OpenCV.pdb

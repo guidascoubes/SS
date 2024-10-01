@@ -12,6 +12,9 @@ namespace SS_OpenCV
         Image<Bgr, Byte> img = null; // working image
         Image<Bgr, Byte> imgUndo = null; // undo backup image - UNDO
         string title_bak = "";
+        bool mouseflag = false;
+        int centerX, centerY;
+
 
         public MainForm()
         {
@@ -298,6 +301,46 @@ namespace SS_OpenCV
             ImageViewer.Refresh(); // refresh image on the screen
 
             Cursor = Cursors.Default; // normal cursor 
+        }
+
+        private void zoomxyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (img == null) // verify if the image is already opened
+                return;
+
+            InputBox scaleBox = new InputBox("scaleFactor");
+            scaleBox.ShowDialog();
+            float scaleFactor = (float)Convert.ToDouble(scaleBox.ValueTextBox.Text);
+
+            mouseflag = true;
+            while (mouseflag)
+            {
+                Application.DoEvents();
+            }
+
+            Cursor = Cursors.WaitCursor; // clock cursor 
+
+            //copy Undo Image
+            imgUndo = img.Copy();
+
+            ImageClass.Scale_point_xy(img, img.Copy(), scaleFactor, centerX, centerY);
+
+            ImageViewer.Image = img;
+            ImageViewer.Refresh(); // refresh image on the screen
+
+            Cursor = Cursors.Default; // normal cursor 
+        }
+
+        private void ImageViewer_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (mouseflag)
+            {
+                centerX = e.X;
+                centerY = e.Y;
+
+                mouseflag = false;
+            }
         }
     }
 }
